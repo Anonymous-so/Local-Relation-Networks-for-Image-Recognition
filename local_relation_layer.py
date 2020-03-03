@@ -54,6 +54,12 @@ def combine_prior(appearance_kernel, geometry_kernel):
 
 class LocalRelationalLayer(torch.nn.Module):
     def __init__(self, channels, k, stride=1, m=None):
+    '''
+    channels: channels of input
+    k: kernel size
+    stride: stride
+    m: parameter of channel sharing
+    '''
         super(LocalRelationalLayer, self).__init__()
         self.channels = channels
         self.k = k
@@ -82,6 +88,7 @@ class LocalRelationalLayer(torch.nn.Module):
         return self.final1x1(pre_output)
 
 if __name__ == '__main__':
+    # example of local relation layer
     layer = LocalRelationalLayer(channels=64,k=7,stride=1,m=8)
     input = torch.zeros(2,64,19,19)
     output = layer(input)
