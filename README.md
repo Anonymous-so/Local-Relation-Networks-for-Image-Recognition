@@ -20,5 +20,4 @@ output = layer(input)
 ```
 
 ## Note:
-Since the implement of 2 x k x k geometric priors is not inferred in paper, we are unaware of how to constuct it and initialized it randomly.
-It will be altered if I know how to construct it.
+Since the implement of 2 x k x k geometric priors is not inferred in paper, we are unaware of how to constuct it and assume that it's a 2 x k x k matrix, one of which denotes offset on x axis and another for offset on y axis. See the code for details.
